@@ -1,0 +1,64 @@
+:root {
+    --white: #fff;
+    --black: #101820;
+    --gold: #FFD700;
+    --red: #e73131;
+    --main-green-color: #0cb877;
+    --main-button-color: #519945;
+    --hover-button-color: #339224;
+    --disabled-button-color: #cccccc;
+    --blue: #152cfe;
+    --light-blue: #66B2FF;
+    --gray: #e2e2e2;
+    --form-header-color: #a5a5a5;
+    --form-body-color: #c3c3c3;
+
+    --max-content-width: 1020px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--black);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: var(--gray);
+}
+
+#app {
+    min-width: 320px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.error-message {
+    color: var(--red);
+}
