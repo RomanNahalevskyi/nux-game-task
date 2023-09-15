@@ -65,7 +65,7 @@ export default new Vuex.Store({
             store.todos = data;
         },
         SET_NEW_TODO(store, data) {
-            store.todos.push(data);
+            store.mainTodos.push(data);
         }
     },
     actions: {
