@@ -18,8 +18,8 @@
 
                     <BaseInput
                         v-model="phoneNumber"
-                        placeholder="Phone phone"
-                        label="Phone phone"
+                        placeholder="Phone number"
+                        label="Phone number"
                         :validation-regex="NUMBERS_AND_CHARS_REGEX()"
                     />
                 </div>
