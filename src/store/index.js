@@ -4,8 +4,7 @@ import {
     extractUserIds,
     concatFavoritesWithTodos,
     updateLocalStorage,
-    filterStorageData,
-    generateRandomNumberAbove201
+    filterStorageData
 } from '@/functions';
 
 Vue.use(Vuex);
@@ -18,7 +17,8 @@ export default new Vuex.Store({
         mainTodos: null,
         userId: null,
         favoritesTodos: [],
-        todos: null
+        todos: null,
+        newUserId: 200
     },
     getters: {
         isAuthenticated: ({ isAuthenticated }) => isAuthenticated,
@@ -66,6 +66,9 @@ export default new Vuex.Store({
         },
         SET_NEW_TODO(store, data) {
             store.mainTodos.push(data);
+        },
+        SET_NEW_USER_ID(store, id) {
+            store.newUserId = id;
         }
     },
     actions: {
@@ -113,12 +116,16 @@ export default new Vuex.Store({
                 })
                     .then((response) => response.json())
                     .then((data) => {
-                        data.id = generateRandomNumberAbove201();
+                        const nextUserId = state.newUserId + 1;
+
+                        data.id = nextUserId;
                         data.completed = false;
 
+                        commit('SET_NEW_USER_ID', nextUserId);
                         commit('SET_NEW_TODO', data);
 
                         const userId = extractUserIds(state.mainTodos);
+
                         commit('SET_ID', userId);
                     });
             } catch (e) {

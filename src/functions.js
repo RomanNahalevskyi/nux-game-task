@@ -1,7 +1,7 @@
 export function extractUserIds(data) {
     const userIdsSet = new Set();
     data.forEach((item) => {
-        userIdsSet.add(item.userId);
+        userIdsSet.add(Number(item.userId));
     });
 
     const uniqueUserIds = Array.from(userIdsSet);
@@ -82,11 +82,4 @@ export function generateRandomString(length) {
     }
 
     return randomString;
-}
-
-export function generateRandomNumberAbove201() {
-    const min = 202;
-    const max = 1000;
-
-    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
