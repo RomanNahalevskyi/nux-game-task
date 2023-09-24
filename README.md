@@ -1,10 +1,15 @@
 # nux-game-test
 
-## Data for auth
+# Auth data
 
+### User name:
 ```
-User name: Kamren
-Phone number: (254)954-1289
+Kamren
+```
+
+### Phone number:
+```
+(254)954-1289
 ```
 
 ## Project setup
